@@ -1,0 +1,6 @@
+# Based on Debian's iptables-persistent package that simply starts the rules using an /etc/iptables/rules file.
+# This one is bit modified to save rules at stop and display status.
+#
+# Also config file added to put in /etc/defaults/
+
+# To use copy iptables-persistent in /etc/init.d/ and default_conf-iptables-persistent to /etc/defaults/iptables-persistent
