@@ -7,7 +7,7 @@ SAVE_NEW_RULES=1
 
 
 # Disable module loading by default
-MODULES="0"
+MODULES=0
 
 # Modules to load:
 #MODULES="nf_nat_ftp nf_conntrack_ftp nf_nat_irc nf_conntrack_irc"
