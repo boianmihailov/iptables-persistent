@@ -12,7 +12,7 @@
 PATH="/sbin:/bin:/usr/sbin:/usr/bin"
 
 # Include config file for iptables-persistent
-. /etc/iptables/iptables.conf
+. /etc/default/iptables-persistent
 
 case "$1" in
 start)
@@ -29,7 +29,9 @@ start)
     fi
 
     # Load Modules
-    modprobe -a $MODULES
+	if [ $$MODULES -ne 0 ]; then
+    	modprobe -a $MODULES
+	fi
 
     # Load saved rules
     if [ -f /etc/iptables/rules ]; then
@@ -62,7 +64,9 @@ stop|force-stop)
     iptables -t mangle -F
 
     # Unload previously loaded modules
-    modprobe -r $MODULES
+    if [ $$MODULES -ne 0 ]; then
+    	modprobe -r $MODULES
+	fi
 
     # Disable Routing if enabled
     if [ $ENABLE_ROUTING -ne 0 ]; then

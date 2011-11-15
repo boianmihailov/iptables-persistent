@@ -3,4 +3,9 @@
 #
 # Also config file added to put in /etc/defaults/
 
-# To use copy iptables-persistent in /etc/init.d/ and default_conf-iptables-persistent to /etc/defaults/iptables-persistent
+# To use copy iptables-persistent in /etc/init.d/ and default_conf-iptables-persistent to /etc/default/iptables-persistent
+
+# cp iptables-persistent /etc/init.d/iptables-persistent
+# chmod +x /etc/init.d/iptables-persistent
+# cp default_conf-iptables-persistent /etc/default/iptables-persistent
+# update-rc.d iptables-persistent defaults
